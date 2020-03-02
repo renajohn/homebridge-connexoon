@@ -28,7 +28,7 @@ class EventFactory {
                 events = this.createExecutionStateChangedEvent(jsonEvent, deviceURLs);
                 break;
             default:
-                this.log.debug(`Ignore event ${jsonEvent.name}`);
+                this.log(`Ignore event ${jsonEvent.name}`);
                 events = [];
         }
         return events;

@@ -41,10 +41,10 @@ class RequestHandler {
             );
             return await this.loginHandler.login();
         } catch (result) {
-            this.log.debug('Failed to login via Somfy OAuth', result.error);
+            this.log.error('Failed to login via Somfy OAuth', result.error);
         }
 
-        this.log.debug('Could not connect with OAuth, attempting simple auth');
+        this.log.error('Could not connect with OAuth, attempting simple auth');
 
         try {
             this.loginHandler = new SimpleAuthLogin(
@@ -54,7 +54,7 @@ class RequestHandler {
             );
             return await this.loginHandler.login();
         } catch (result) {
-            this.log.debug('Failed to login via Simple Auth', result.error);
+            this.log.error('Failed to login via Simple Auth', result.error);
         }
 
         this.log.error(
